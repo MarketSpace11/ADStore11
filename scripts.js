@@ -1,20 +1,31 @@
-// Cambio entre pantallas
+// Seleccionar todas las pantallas
+const screens = document.querySelectorAll('.screen');
+
+// Añadir evento de clic a los botones de categoría
 document.querySelectorAll('.category-button').forEach(button => {
     button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        document.querySelectorAll('.screen').forEach(screen => {
-            screen.classList.remove('active');
-        });
-        document.querySelector(targetId).classList.add('active');
+        const targetScreen = document.querySelector(button.dataset.target);
+        changeScreen(targetScreen);
     });
 });
 
+// Añadir evento de clic a los botones de regresar
 document.querySelectorAll('.back-button').forEach(button => {
     button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        document.querySelectorAll('.screen').forEach(screen => {
-            screen.classList.remove('active');
-        });
-        document.querySelector(targetId).classList.add('active');
+        const mainScreen = document.querySelector('#main-screen');
+        changeScreen(mainScreen);
     });
+});
+
+// Función para cambiar de pantalla
+function changeScreen(targetScreen) {
+    screens.forEach(screen => {
+        screen.classList.remove('active');
+    });
+    targetScreen.classList.add('active');
+}
+
+// Botón de enlace externo
+document.getElementById('external-link-button').addEventListener('click', () => {
+    window.location.href = 'https://www.appcreator24.com/app3272884-rtfc6q';
 });
