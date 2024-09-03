@@ -119,6 +119,7 @@ h1#welcome-text {
     scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
 }
 
+/* Miniaturas */
 .item {
     display: flex;
     flex-direction: column;
@@ -128,8 +129,10 @@ h1#welcome-text {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.6);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* Elimina el subrayado del enlace */
 }
 
+/* Estilo para las imágenes de las miniaturas */
 .item img {
     max-width: 150px; /* Ajusta el tamaño de las miniaturas */
     border-radius: 10px;
@@ -143,11 +146,13 @@ h1#welcome-text {
     text-align: center;
 }
 
+/* Hover para las miniaturas */
 .item:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* Botón de Regresar */
 .back-button {
     position: absolute;
     bottom: 20px;
