@@ -27,5 +27,5 @@ function changeScreen(targetScreen) {
 
 // Botón de enlace externo
 document.getElementById('external-link-button').addEventListener('click', () => {
-    window.location.href = 'https://www.appcreator24.com/app3272884-rtfc6q';
+    window.location.href = 'https://marketspace11.itch.io/adstore11';
 });
