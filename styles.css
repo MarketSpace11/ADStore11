@@ -18,6 +18,8 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Para evitar el scroll en la pantalla */
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
 }
 
 .screen.active {
