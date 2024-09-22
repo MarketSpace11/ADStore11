@@ -12,9 +12,47 @@
             color: inherit; /* Mantiene el color del texto original si es necesario */
         }
 
-        /* Si necesitas ajustar el color del texto dentro de los enlaces */
+        /* Ajusta el color del texto dentro de los enlaces si es necesario */
         .item a p {
             color: inherit; /* O ajusta el color según tu diseño */
+        }
+
+        /* Estilo para las imágenes de fondo que se mostrarán antes de que cargue el video */
+        .video-container {
+            position: relative;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Fondo para la pantalla principal */
+        #main-screen .video-container::before {
+            background-image: url('imagenes/principal_bg.jpg'); /* Cambia por tu imagen de fondo */
+        }
+
+        /* Fondo para la pantalla de aplicaciones */
+        #apps-screen .video-container::before {
+            background-image: url('imagenes/aplicaciones_bg.jpg'); /* Cambia por tu imagen de fondo */
+        }
+
+        /* Fondo para la pantalla de juegos */
+        #games-screen .video-container::before {
+            background-image: url('imagenes/juegos_bg.jpg'); /* Cambia por tu imagen de fondo */
+        }
+
+        /* Asegura que el video esté sobre el fondo */
+        video {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -106,102 +144,16 @@
                     <img src="imagenes/juego1_miniatura.png" alt="Juego 3">
                     <p>CircleHub</p>
                 </a>
-                <a href="https://www.appcreator24.com/app2889602-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego2_miniatura.png" alt="Juego 4">
-                    <p>Críquet</p>
-                </a>
-                <a href="https://marketspace11.itch.io/danger-square" class="item" target="_blank">
-                    <img src="imagenes/juego3_miniatura.png" alt="Juego 5">
-                    <p>Danger Square</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2916609-wa2pm9" class="item" target="_blank">
-                    <img src="imagenes/juego4_miniatura.png" alt="Juego 6">
-                    <p>Dino World</p>
-                </a>
-                <a href="https://marketspace11.itch.io/dont-popme" class="item" target="_blank">
-                    <img src="imagenes/juego5_miniatura.png" alt="Juego 7">
-                    <p>Don't PopMe</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889603-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego6_miniatura.png" alt="Juego 8">
-                    <p>Fischinger</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889536-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego7_miniatura.png" alt="Juego 9">
-                    <p>Gnomos de jardín</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889615-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego8_miniatura.png" alt="Juego 10">
-                    <p>Halloween 2016</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889617-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego9_miniatura.png" alt="Juego 11">
-                    <p>Halloween 2020</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889616-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego10_miniatura.png" alt="Juego 12">
-                    <p>Hip-hop</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889459-dc0as1" class="item" target="_blank">
-                    <img src="imagenes/juego11_miniatura.png" alt="Juego 13">
-                    <p>Interland</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889480-dc0as1" class="item" target="_blank">
-                    <img src="imagenes/juego12_miniatura.png" alt="Juego 14">
-                    <p>Interland Español</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889614-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego13_miniatura.png" alt="Juego 15">
-                    <p>Lotería</p>
-                </a>
-                <a href="https://marketspace11.itch.io/minigamingplanet" class="item" target="_blank">
-                    <img src="imagenes/juego14_miniatura.png" alt="Juego 16">
-                    <p>MiniGamingPlanet</p>
-                </a>
-                <a href="https://marketspace11.itch.io/multigamingplanet-poki" class="item" target="_blank">
-                    <img src="imagenes/juego15_miniatura.png" alt="Juego 17">
-                    <p>MultiGamingPlanet Poki</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2913843-uzjlox" class="item" target="_blank">
-                    <img src="imagenes/juego16_miniatura.png" alt="Juego 18">
-                    <p>Next Color</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889621-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego17_miniatura.png" alt="Juego 19">
-                    <p>Petanca</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889540-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego18_miniatura.png" alt="Juego 20">
-                    <p>Pony Express</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889604-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego19_miniatura.png" alt="Juego 21">
-                    <p>Rockmore</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889538-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego20_miniatura.png" alt="Juego 22">
-                    <p>Scoville</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2890170-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego21_miniatura.png" alt="Juego 23">
-                    <p>Serpiente</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2915530-n4h0cs" class="item" target="_blank">
-                    <img src="imagenes/juego22_miniatura.png" alt="Juego 24">
-                    <p>Sky Tower</p>
-                </a>
-                <a href="https://marketspace11.itch.io/star-lite" class="item" target="_blank">
-                    <img src="imagenes/juego23_miniatura.png" alt="Juego 25">
-                    <p>Star Lite</p>
-                </a>
-                <a href="https://www.appcreator24.com/app2889622-hls39y" class="item" target="_blank">
-                    <img src="imagenes/juego24_miniatura.png" alt="Juego 26">
-                    <p>Té de burbujas</p>
-                </a>
+                <!-- Más juegos... -->
             </div>
             <button class="back-button" data-target="#main-screen">Regresar</button>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
 
     <script src="scripts.js"></script>
 </body>
