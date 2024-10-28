@@ -65,7 +65,7 @@ h1#welcome-text {
 /* Botones de categorías */
 .categories {
     position: absolute;
-    bottom: 200px; /* Ajusta el espacio desde la parte inferior */
+    bottom: 250px; /* Ajusta el espacio desde la parte inferior */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra los botones horizontalmente */
@@ -160,7 +160,7 @@ h1#welcome-text {
     bottom: 20px;
     right: 20px;
     background-color: red;
-    color: white;
+    color: red;
     border: none;
     padding: 15px 25px;
     border-radius: 10px;
