@@ -74,7 +74,7 @@ h1#welcome-text {
 }
 
 .category-button {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: lightblue;
     border: none;
     padding: 20px 30px;
     font-size: 1.5em;
