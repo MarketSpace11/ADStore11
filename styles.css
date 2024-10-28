@@ -160,7 +160,7 @@ h1#welcome-text {
     bottom: 20px;
     right: 20px;
     background-color: blue;
-    color: red;
+    color: white;
     border: none;
     padding: 15px 25px;
     border-radius: 10px;
@@ -170,5 +170,5 @@ h1#welcome-text {
 }
 
 .back-button:hover {
-    background-color: darkred;
+    background-color: red;
 }
