@@ -85,7 +85,7 @@ h1#welcome-text {
 }
 
 .category-button:hover {
-    background-color: lightblue;
+    background-color: red;
     transform: scale(1.1);
 }
 
