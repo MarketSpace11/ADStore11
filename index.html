@@ -8,31 +8,42 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imagenes/fevicon.png" type="image/png">
     <style>
-        /* Asegúrate de que los enlaces no tengan subrayado */
-        .item a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Ajuste del color del texto dentro de los enlaces */
-        .item a p {
-            color: inherit;
-        }
-
         /* Botones de categoría */
         .category-button {
             background-color: blue;
             color: white;
             border: none;
-            padding: 20px 30px;
+            padding: 15px 25px;
             cursor: pointer;
             border-radius: 5px;
             font-size: 18px;
+            margin: 10px; /* Espaciado entre botones */
         }
 
         /* Hover de los botones */
         .category-button:hover {
             background-color: red;
+        }
+
+        /* Asegúrate de que las secciones sean visibles al inicio */
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        /* Asegura la visibilidad de las animaciones */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -71,18 +82,12 @@
             <section class="animate-on-scroll">
                 <h2>Applications</h2>
                 <div class="grid-container">
-                    <!-- Miniaturas con enlaces -->
                     <a href="https://marketspace11.itch.io/prestoplay" class="item" target="_blank">
                         <img src="imagenes/app1_miniatura.png" alt="App 1">
                         <p>PrestoPlay</p>
                     </a>
-                    <a href="https://marketspace11.itch.io/qr-generator" class="item" target="_blank">
-                        <img src="imagenes/app2_miniatura.png" alt="App 2">
-                        <p>QR-Generator</p>
-                    </a>
-                    <!-- Más elementos según sea necesario -->
                 </div>
-                <button class="back-button" data-target="#main-screen">Go Back</button>
+                <button class="back-button category-button" data-target="#main-screen">Go Back</button>
             </section>
         </div>
     </div>
@@ -100,23 +105,44 @@
             <section class="animate-on-scroll">
                 <h2>Games</h2>
                 <div class="grid-container games-grid">
-                    <!-- Miniaturas con enlaces -->
                     <a href="https://marketspace11.itch.io/max-running" class="item" target="_blank">
                         <img src="imagenes/maxrunning.png" alt="Juego 1">
                         <p>Max Running</p>
                     </a>
-                    <a href="https://marketspace11.itch.io/miners-fortune" class="item" target="_blank">
-                        <img src="imagenes/minersfortune.png" alt="Juego 2">
-                        <p>Miner's Fortune</p>
-                    </a>
-                    <!-- Más elementos según sea necesario -->
                 </div>
-                <button class="back-button" data-target="#main-screen">Go Back</button>
+                <button class="back-button category-button" data-target="#main-screen">Go Back</button>
             </section>
         </div>
     </div>
 
-    <script src="scripts.js"></script>
-    <script src="scroll-animation.js"></script>
+    <script>
+        // Hacer funcionar los botones de cambio de pantalla
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetScreen = button.getAttribute('data-target');
+                if (targetScreen) {
+                    document.querySelectorAll('.screen').forEach(screen => {
+                        screen.classList.remove('active');
+                    });
+                    document.querySelector(targetScreen).classList.add('active');
+                }
+            });
+        });
+
+        // Lógica para animar elementos al hacer scroll
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        function handleScroll() {
+            animatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
 </body>
 </html>
