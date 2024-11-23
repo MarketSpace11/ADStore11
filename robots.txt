@@ -1,0 +1,10 @@
+# Permitir que todos los bots rastreen el sitio
+User-agent: *
+Disallow:
+
+# Específicamente para Googlebot: permitir todo
+User-agent: Googlebot
+Disallow:
+
+# Ubicación del sitemap
+Sitemap: https://adsmarketspace.com/sitemap.xml
